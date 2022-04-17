@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="/css/toastr.min.css" rel="stylesheet" th:href="@{/css/toastr.min.css}" />
+  <script type="text/javascript" src="/js/toastr.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">SERVITEC</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/clientes">Clientes </a></li>
+      <li><a href="/contrato">Contratos</a></li>
+      <li><a href="#">Equipos </a></li>
+      <li><a href="#">Orden de trabajo</a></li>
+     <li><a href="#">Personal</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right"> 
+	    <form th:action="@{/logout}"method="POST">
+				<button type="submit" class="btn btn-warning">Salir</button>
+		</form>
+    </ul>
+  </div>
+</nav>
+  
+<script type="text/javascript">
+		toastr.options = {
+				  "closeButton": true,
+				  "debug": false,
+				  "newestOnTop": true,
+				  "progressBar": true,
+				  "positionClass": "toast-top-right",
+				  "preventDuplicates": false,
+				  "onclick": null,
+				  "showDuration": "3000",
+				  "hideDuration": "1000",
+				  "timeOut": "5000",
+				  "extendedTimeOut": "1000",
+				  "showEasing": "swing",
+				  "hideEasing": "linear",
+				  "showMethod": "fadeIn",
+				  "hideMethod": "fadeOut"
+				}
+		$(document).ready(function() {
+			toastr.success('Bienvenido a la página de inicio');
+			
+		});
+		</script>
+
+
+</body>
+</html>
